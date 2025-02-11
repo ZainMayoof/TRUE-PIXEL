@@ -5,22 +5,22 @@
 
 @layer base {
   :root {
-    --background: 260 50% 6%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
     
-    --card: 260 50% 6%;
+    --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 260 50% 6%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
     
     --primary: 262 83% 58%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 260 50% 10%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 260 50% 10%;
+    --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
     
     --accent: 262 83% 58%;
@@ -29,30 +29,30 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 260 50% 10%;
-    --input: 260 50% 10%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
     --ring: 262 83% 58%;
     
     --radius: 0.75rem;
   }
 
   .light {
-    --background: 260 50% 6%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
     
-    --card: 260 50% 6%;
+    --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 260 50% 6%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
     
     --primary: 262 83% 58%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 260 50% 10%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 260 50% 10%;
+    --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
     
     --accent: 262 83% 58%;
@@ -61,8 +61,8 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 260 50% 10%;
-    --input: 260 50% 10%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
     --ring: 262 83% 58%;
   }
 }
@@ -102,13 +102,11 @@
 
 html {
   background: radial-gradient(circle at center, hsl(262 83% 58% / 0.15), transparent 60%),
-              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%),
-              hsl(260 50% 6%);
+              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%);
   min-height: 100vh;
 }
 
 .dark html {
   background: radial-gradient(circle at center, hsl(262 83% 58% / 0.15), transparent 60%),
-              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%),
-              hsl(260 50% 6%);
+              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%);
 }
