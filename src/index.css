@@ -89,6 +89,36 @@
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+.neon-text {
+  @apply text-foreground;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+               0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.gradient-hover {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gradient-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-hover:hover::before {
+  opacity: 1;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

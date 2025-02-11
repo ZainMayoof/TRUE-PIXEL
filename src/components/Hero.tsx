@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-sm font-medium mb-4">
             Interactive AI Learning
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight neon-text">
             Decoding AI in Media:
             <br />
             Can You Spot the Truth?
@@ -29,7 +29,7 @@ const Hero = () => {
           <Button
             onClick={scrollToGame}
             size="lg"
-            className="rounded-full animate-pulse"
+            className="rounded-full gradient-hover animate-pulse"
           >
             Play the Game
           </Button>

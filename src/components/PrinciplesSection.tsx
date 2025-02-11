@@ -36,7 +36,7 @@ const PrinciplesSection = () => {
   return (
     <section id="principles" className="py-24 content-grid">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold mb-4">5 Key AI Ethics Principles</h2>
+        <h2 className="text-3xl font-bold mb-4 neon-text">5 Key AI Ethics Principles</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Understanding these core principles is essential for responsible AI
           development and implementation.
@@ -53,7 +53,7 @@ const PrinciplesSection = () => {
               <div className="p-3 rounded-full bg-primary/10">
                 <principle.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold">{principle.title}</h3>
+              <h3 className="text-xl font-semibold neon-text">{principle.title}</h3>
               <p className="text-muted-foreground">{principle.description}</p>
             </div>
           </Card>
