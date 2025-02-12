@@ -12,7 +12,26 @@ const NavigationBar = () => {
       <div className="content-grid">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-xl font-semibold">
+            <a 
+              href="/" 
+              className="text-xl font-bold"
+              style={{
+                background: `linear-gradient(45deg, 
+                  #FFFFFF 0%,
+                  #6C7BFF 25%,
+                  #FF00D6 50%,
+                  #0500FF 75%,
+                  #6AB8FF 100%
+                )`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundSize: "200% auto",
+                animation: "gradient 3s linear infinite",
+                textShadow: "0 0 10px rgba(108, 123, 255, 0.3)",
+                fontFamily: "'Press Start 2P', cursive",
+                letterSpacing: "1px"
+              }}
+            >
               Responsible AI
             </a>
           </div>
