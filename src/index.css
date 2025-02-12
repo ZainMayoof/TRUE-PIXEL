@@ -75,6 +75,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    cursor: none; /* Hide the default cursor */
   }
 }
 
@@ -217,4 +218,136 @@ html {
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.cursor-brush {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Paint Drip Animation */
+.paint-drip-cursor {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: continuousDrip 2s linear forwards;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+@keyframes continuousDrip {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(200vh) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced drip colors with glow effect */
+.drip-primary { 
+  background: hsl(var(--primary));
+  box-shadow: 0 0 10px hsl(var(--primary));
+}
+.drip-violet { 
+  background: hsl(270, 80%, 60%);
+  box-shadow: 0 0 10px hsl(270, 80%, 60%);
+}
+.drip-blue { 
+  background: hsl(210, 80%, 60%);
+  box-shadow: 0 0 10px hsl(210, 80%, 60%);
+}
+.drip-green { 
+  background: hsl(150, 80%, 60%);
+  box-shadow: 0 0 10px hsl(150, 80%, 60%);
+}
+.drip-orange { 
+  background: hsl(30, 80%, 60%);
+  box-shadow: 0 0 10px hsl(30, 80%, 60%);
+}
+.drip-red { 
+  background: hsl(0, 80%, 60%);
+  box-shadow: 0 0 10px hsl(0, 80%, 60%);
+}
+.drip-cyan { 
+  background: hsl(180, 80%, 60%);
+  box-shadow: 0 0 10px hsl(180, 80%, 60%);
+}
+.drip-pink { 
+  background: hsl(330, 80%, 60%);
+  box-shadow: 0 0 10px hsl(330, 80%, 60%);
+}
+.drip-yellow { 
+  background: hsl(60, 80%, 60%);
+  box-shadow: 0 0 10px hsl(60, 80%, 60%);
+}
+.drip-purple { 
+  background: hsl(290, 80%, 60%);
+  box-shadow: 0 0 10px hsl(290, 80%, 60%);
+}
+
+/* Clickable cursor styles */
+.cursor-clickable {
+  transform: scale(1.2);
+}
+
+.cursor-clickable .cursor-brush {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Make sure all clickable elements don't show the default cursor */
+a, 
+button,
+[role="button"],
+[class*="btn"],
+.clickable {
+  cursor: none !important;
+}
+
+/* Prevent text selection cursor from showing */
+* {
+  cursor: none !important;
+}
+
+/* Allow text selection in inputs and textareas */
+input,
+textarea {
+  cursor: text !important;
 }

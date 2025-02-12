@@ -26,34 +26,37 @@ const RainbowDrips = () => {
 
   useEffect(() => {
     const createDrip = () => {
-      const newDrip = {
-        id: Date.now(),
-        x: Math.random() * window.innerWidth,
-        y: -10, // Start slightly above the viewport
-        color: colors[Math.floor(Math.random() * colors.length)],
-        delay: Math.random() * 0.5,
-      };
+      // Create multiple drips at once
+      const numDrips = Math.floor(Math.random() * 2) + 1; // 1-2 drips at a time
+      
+      for (let i = 0; i < numDrips; i++) {
+        const newDrip = {
+          id: Date.now() + i,
+          x: Math.random() * window.innerWidth,
+          y: -10,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          delay: Math.random() * 0.5,
+        };
 
-      setDrips((prev) => [...prev, newDrip]);
+        setDrips((prev) => [...prev, newDrip]);
 
-      // Remove drip after animation
-      setTimeout(() => {
-        setDrips((prev) => prev.filter((drip) => drip.id !== newDrip.id));
-      }, 2000); // Match this with CSS animation duration
+        setTimeout(() => {
+          setDrips((prev) => prev.filter((drip) => drip.id !== newDrip.id));
+        }, 2000);
+      }
     };
 
     // Create initial drips
-    for (let i = 0; i < 10; i++) {
-      setTimeout(createDrip, i * 200);
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createDrip, i * 100);
     }
 
-    // Continue creating drips
+    // Continue creating drips more frequently
     const interval = setInterval(() => {
-      if (Math.random() < 0.3) {
-        // 30% chance to create a drip
+      if (Math.random() < 0.4) { // 40% chance to create drips
         createDrip();
       }
-    }, 100);
+    }, 50);
 
     return () => clearInterval(interval);
   }, []);
