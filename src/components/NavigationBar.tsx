@@ -75,6 +75,14 @@ const NavigationBar = () => {
             >
               About
             </Link>
+            <Link
+              to="/tools"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/tools" ? "text-primary" : ""
+              }`}
+            >
+              Tools
+            </Link>
             <ThemeToggle />
           </div>
 
@@ -141,6 +149,15 @@ const NavigationBar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                to="/tools"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/tools" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Tools
               </Link>
               <div className="px-3 py-2">
                 <ThemeToggle />
