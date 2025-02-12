@@ -1,8 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -12,24 +12,24 @@ const NavigationBar = () => {
       <div className="content-grid">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-xl font-semibold">
+            <Link to="/" className="text-xl font-semibold">
               Responsible AI
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#principles" className="hover:text-primary/80 transition-colors">
+            <a href="/#principles" className="hover:text-primary/80 transition-colors">
               Principles
             </a>
-            <a href="#case-studies" className="hover:text-primary/80 transition-colors">
+            <a href="/#case-studies" className="hover:text-primary/80 transition-colors">
               Case Studies
             </a>
-            <a href="#resources" className="hover:text-primary/80 transition-colors">
+            <a href="/#resources" className="hover:text-primary/80 transition-colors">
               Resources
             </a>
-            <a href="#about" className="hover:text-primary/80 transition-colors">
+            <Link to="/about" className="hover:text-primary/80 transition-colors">
               About
-            </a>
+            </Link>
             <ThemeToggle />
           </div>
 
@@ -49,29 +49,29 @@ const NavigationBar = () => {
           <div className="md:hidden animate-in">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a
-                href="#principles"
+                href="/#principles"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
               >
                 Principles
               </a>
               <a
-                href="#case-studies"
+                href="/#case-studies"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
               >
                 Case Studies
               </a>
               <a
-                href="#resources"
+                href="/#resources"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
               >
                 Resources
               </a>
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
               >
                 About
-              </a>
+              </Link>
               <div className="px-3 py-2">
                 <ThemeToggle />
               </div>
