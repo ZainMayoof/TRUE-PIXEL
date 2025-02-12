@@ -49,7 +49,9 @@ const ClickableBrushCursor = () => (
 );
 
 const CustomCursor = () => {
-  const [drips, setDrips] = useState<{ id: number; x: number; y: number; color: string }[]>([]);
+  const [drips, setDrips] = useState<
+    { id: number; x: number; y: number; color: string }[]
+  >([]);
   const [isClickable, setIsClickable] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -79,31 +81,31 @@ const CustomCursor = () => {
       // Check if the cursor is over a clickable element
       const target = e.target as HTMLElement;
       setIsClickable(
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'A' ||
-        target.closest('button') !== null ||
-        target.closest('a') !== null ||
-        target.closest('[role="button"]') !== null ||
-        window.getComputedStyle(target).cursor === 'pointer'
+        target.tagName === "BUTTON" ||
+          target.tagName === "A" ||
+          target.closest("button") !== null ||
+          target.closest("a") !== null ||
+          target.closest('[role="button"]') !== null ||
+          window.getComputedStyle(target).cursor === "pointer"
       );
 
       // Only create drips when not over clickable elements
       if (!isClickable && Math.random() < 0.2) {
         const numDrips = Math.floor(Math.random() * 3) + 1;
-        
+
         for (let i = 0; i < numDrips; i++) {
           const offset = {
             x: (Math.random() - 0.5) * 10,
             y: (Math.random() - 0.5) * 10,
           };
-          
+
           const newDrip = {
             id: Date.now() + i,
             x: e.clientX + offset.x,
             y: e.clientY + offset.y,
             color: colors[Math.floor(Math.random() * colors.length)],
           };
-          
+
           setDrips((prev) => [...prev, newDrip]);
 
           const duration = 800 + Math.random() * 400;
@@ -121,7 +123,7 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className={`custom-cursor ${isClickable ? 'cursor-clickable' : ''}`}
+        className={`custom-cursor ${isClickable ? "cursor-clickable" : ""}`}
         style={{
           x: springX,
           y: springY,
@@ -143,4 +145,4 @@ const CustomCursor = () => {
   );
 };
 
-export default CustomCursor; 
+export default CustomCursor;

@@ -103,14 +103,29 @@ const caseStudies = [
 const CaseStudiesSection = () => {
   return (
     <section id="case-studies" className="py-24 content-grid">
+      <div className="animate-in space-y-12">
+        <div className="text-center space-y-4">
+          <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-sm font-medium">
+            Case Studies
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <span className="neon-text">Real-World AI Cases</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Examining actual cases where AI implementation raised ethical
+            concerns and how they were addressed
+          </p>
+        </div>
+      </div>
+
       <div className="mb-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 neon-text">
+          {/* <h2 className="text-3xl font-bold mb-4 neon-text">
             AI in Creative Fields
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Discover how AI is transforming different areas of creative work
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
