@@ -1,144 +1,172 @@
+import React from "react";
 import NavigationBar from "@/components/NavigationBar";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import {
-  BookOpen,
-  FileText,
-  Wrench,
-  GraduationCap,
-  ExternalLink,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Helmet } from "react-helmet";
+import { 
+  faMicroscope, 
+  faPaintbrush, 
+  faScaleBalanced, 
+  faAtom,
+  faBrain,
+  faGraduationCap,
+  faRobot,
+  faPalette,
+  faFileSignature,
+  faMagnifyingGlassChart,
+  faDatabase,
+  faShieldHalved,
+  faAward,
+  faCompass,
+  faFilm
+} from '@fortawesome/free-solid-svg-icons';
 
 const resourceCategories = [
   {
-    title: "Educational Materials",
-    icon: GraduationCap,
-    resources: [
-      {
-        title: "Understanding Deepfakes",
-        description:
-          "A comprehensive guide to understanding and detecting AI-generated media.",
-        link: "https://example.com/deepfake-guide",
-      },
-      {
-        title: "AI Ethics Course",
-        description:
-          "Learn about the ethical implications of AI in modern media.",
-        link: "https://example.com/ai-ethics",
-      },
-    ],
-  },
-  {
     title: "Research & Papers",
-    icon: FileText,
+    icon: faMicroscope,
     resources: [
       {
-        title: "Latest Deepfake Detection Research",
-        description: "Recent academic papers on deepfake detection techniques.",
-        link: "https://example.com/research",
+        title: "Responsible AI in the Arts",
+        description: "How Creative Disciplines are Shaping AI Developments Everywhere - An exploration of AI's impact on creative fields.",
+        link: "https://www.responsible.ai/responsible-ai-in-the-arts-how-creative-disciplines-are-shaping-ai-developments-everywhere/",
+        icon: faPaintbrush,
       },
       {
-        title: "AI Media Impact Study",
-        description: "Research on how AI-generated content affects society.",
-        link: "https://example.com/impact-study",
+        title: "Ethical & Legal Implications",
+        description: "Research on the ethical and legal implications of AI in arts and creative industries.",
+        link: "https://dl.acm.org/doi/abs/10.1145/3597512.3597528",
+        icon: faScaleBalanced,
+      },
+      {
+        title: "Rethinking the A in STEAM",
+        description: "Insights from and for AI Literacy Education - Exploring the integration of arts into STEM education for AI literacy.",
+        link: "https://arxiv.org/abs/2405.18179",
+        icon: faAtom,
       },
     ],
   },
   {
-    title: "Detection Tools",
-    icon: Wrench,
+    title: "Educational Materials",
+    icon: faGraduationCap,
     resources: [
       {
-        title: "Deepfake Detector",
-        description:
-          "Open-source tool for analyzing potentially AI-generated media.",
-        link: "https://example.com/detector",
+        title: "Art and AI Workshop",
+        description: "MIT RAISE workshop exploring AI in creative learning, covering generative models and ethical implications.",
+        link: "https://raise.mit.edu/art-and-ai-workshop/",
+        icon: faRobot,
       },
       {
-        title: "Media Authenticity Checker",
-        description: "Professional tool for verifying media authenticity.",
-        link: "https://example.com/checker",
+        title: "Making AI Art Responsibly",
+        description: "A comprehensive field guide for creating AI art with ethical considerations.",
+        link: "https://www.liacoleman.com/the-responsible-ai-art-field-guide",
+        icon: faPalette,
+      },
+      {
+        title: "NAEA Position Statement",
+        description: "Official position on AI and AI-generated imagery in visual arts education.",
+        link: "https://www.arteducators.org/advocacy-policy/articles/1303-naea-position-statement-on-use-of-artificial-intelligence-ai-and-ai-generated-imagery-in-visual-arts-education",
+        icon: faFileSignature,
       },
     ],
   },
   {
     title: "Best Practices",
-    icon: BookOpen,
+    icon: faAward,
     resources: [
       {
-        title: "Media Verification Guidelines",
-        description: "Step-by-step guide for verifying digital media content.",
-        link: "https://example.com/guidelines",
+        title: "Avid's Guide for Creative Professionals",
+        description: "Guidelines for responsible AI use in creative fields, emphasizing safety, privacy, and human oversight.",
+        link: "https://connect.avid.com/rs/486-EVU-559/images/Responsible-AI-for-Creative-Professionals.pdf",
+        icon: faCompass,
       },
       {
-        title: "Ethical AI Usage Guide",
-        description: "Best practices for responsible AI implementation.",
-        link: "https://example.com/best-practices",
+        title: "Documentary AI Guidelines",
+        description: "Ethical guidelines by the Archival Producers Alliance for using AI in nonfiction filmmaking.",
+        link: "https://www.theguardian.com/film/2024/sep/13/documentary-ai-guidelines",
+        icon: faFilm,
       },
     ],
   },
 ];
 
-const Resources = () => {
+const ResourcesPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-background to-background/80">
+      <Helmet>
+        <title>AI Media Resources | True Pixel</title>
+      </Helmet>
       <NavigationBar />
       <main>
-        <section className="min-h-screen pt-24">
-          <div className="content-grid">
-            <div className="text-center mb-16">
-              <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-sm font-medium mb-4">
-                Learning Resources
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight neon-text mb-6">
-                AI Media Resources
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Explore our curated collection of resources to deepen your
-                understanding of AI in media and responsible technology use.
-              </p>
-            </div>
-
-            <div className="grid gap-12">
-              {resourceCategories.map((category, index) => (
-                <div
-                  key={index}
-                  className="animate-in"
-                  style={
-                    {
-                      "--enter-delay": `${index * 100}ms`,
-                    } as React.CSSProperties
-                  }
-                >
-                  <div className="flex items-center gap-2 mb-6">
-                    <category.icon className="h-6 w-6 text-primary" />
-                    <h2 className="text-2xl font-semibold">{category.title}</h2>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {category.resources.map((resource, resourceIndex) => (
-                      <Card
-                        key={resourceIndex}
-                        className="p-6 hover:scale-[1.02] transition-transform backdrop-blur-sm"
-                      >
-                        <a
-                          href={resource.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="space-y-4"
-                        >
-                          <h3 className="text-xl font-semibold flex items-center gap-2">
-                            {resource.title}
-                            <ExternalLink className="h-4 w-4 text-muted-foreground" />
-                          </h3>
-                          <p className="text-muted-foreground">
-                            {resource.description}
-                          </p>
-                        </a>
-                      </Card>
-                    ))}
-                  </div>
+        <section className="min-h-screen pt-24 pb-12 relative overflow-hidden">
+          <div className="content-grid relative z-10">
+            <div className="animate-in space-y-12">
+              <div className="text-center space-y-4">
+                <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-sm font-medium">
+                  Learning Resources
                 </div>
-              ))}
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+                  <span className="neon-text">AI Media Resources</span>
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Explore our curated collection of resources to deepen your understanding
+                  of AI in media and responsible technology use.
+                </p>
+              </div>
+
+              <div className="grid gap-12">
+                {resourceCategories.map((category, index) => (
+                  <div 
+                    key={index} 
+                    className="animate-in relative rounded-xl overflow-hidden"
+                    style={{ '--enter-delay': `${index * 100}ms` } as React.CSSProperties}
+                  >
+                    <div className="relative z-10 p-8">
+                      <div className="flex items-center gap-2 mb-6">
+                        <FontAwesomeIcon 
+                          icon={category.icon} 
+                          className="text-primary text-2xl" 
+                        />
+                        <h2 className="text-2xl font-semibold">{category.title}</h2>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {category.resources.map((resource, resourceIndex) => (
+                          <Card 
+                            key={resourceIndex} 
+                            className="group hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm"
+                          >
+                            <div className="p-6 flex gap-4">
+                              <div className="flex-shrink-0">
+                                <FontAwesomeIcon 
+                                  icon={resource.icon} 
+                                  className="text-primary text-2xl" 
+                                />
+                              </div>
+                              <div className="space-y-4">
+                                <a
+                                  href={resource.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="space-y-2"
+                                >
+                                  <h3 className="text-xl font-semibold flex items-center gap-2">
+                                    {resource.title}
+                                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                                  </h3>
+                                  <p className="text-muted-foreground">{resource.description}</p>
+                                </a>
+                              </div>
+                            </div>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -148,4 +176,4 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+export default ResourcesPage;

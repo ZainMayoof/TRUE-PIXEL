@@ -3,11 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./pages/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Index from "@/pages/Index";
+import PrinciplesPage from "@/pages/principles";
+import ResourcesPage from "@/pages/resources";
+import AboutPage from "@/pages/about";
 import NotFound from "./pages/NotFound";
-import Resources from "./pages/Resources";
+import CaseStudiesPage from "@/pages/case-studies";
 
 const queryClient = new QueryClient();
 
@@ -17,14 +19,16 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/resources" element={<Resources />} />
+            <Route path="/principles" element={<PrinciplesPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   </ThemeProvider>

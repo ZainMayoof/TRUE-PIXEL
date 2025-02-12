@@ -35,29 +35,43 @@ const NavigationBar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="/#principles"
-              onClick={(e) => handleNavClick(e, "principles")}
-              className="hover:text-primary/80 transition-colors"
+            <Link
+              to="/"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/" ? "text-primary" : ""
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/principles"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/principles" ? "text-primary" : ""
+              }`}
             >
               Principles
-            </a>
-            <a
-              href="/#case-studies"
-              onClick={(e) => handleNavClick(e, "case-studies")}
-              className="hover:text-primary/80 transition-colors"
+            </Link>
+            <Link
+              to="/case-studies"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/case-studies" ? "text-primary" : ""
+              }`}
             >
               Case Studies
-            </a>
+            </Link>
             <Link
               to="/resources"
-              className="hover:text-primary/80 transition-colors"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/resources" ? "text-primary" : ""
+              }`}
             >
               Resources
             </Link>
             <Link
               to="/about"
-              className="hover:text-primary/80 transition-colors"
+              className={`hover:text-primary/80 transition-colors ${
+                location.pathname === "/about" ? "text-primary" : ""
+              }`}
             >
               About
             </Link>
@@ -83,29 +97,48 @@ const NavigationBar = () => {
         {isOpen && (
           <div className="md:hidden animate-in">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="/#principles"
-                onClick={(e) => handleNavClick(e, "principles")}
-                className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
+              <Link
+                to="/"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/principles"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/principles" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 Principles
-              </a>
-              <a
-                href="/#case-studies"
-                onClick={(e) => handleNavClick(e, "case-studies")}
-                className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
+              </Link>
+              <Link
+                to="/case-studies"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/case-studies" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 Case Studies
-              </a>
+              </Link>
               <Link
                 to="/resources"
-                className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/resources" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 Resources
               </Link>
               <Link
                 to="/about"
-                className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
+                className={`block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors ${
+                  location.pathname === "/about" ? "text-primary" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
               >
                 About
               </Link>

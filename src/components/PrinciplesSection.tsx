@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { Shield, Scale, UserCheck, Lock, Search } from "lucide-react";
 
@@ -18,7 +17,8 @@ const principles = [
   {
     icon: UserCheck,
     title: "Accountability",
-    description: "Clear responsibility for AI decisions and their consequences.",
+    description:
+      "Clear responsibility for AI decisions and their consequences.",
   },
   {
     icon: Lock,
@@ -34,32 +34,51 @@ const principles = [
 
 const PrinciplesSection = () => {
   return (
-    <section id="principles" className="py-24 content-grid">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold mb-4 neon-text">5 Key AI Ethics Principles</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Understanding these core principles is essential for responsible AI
-          development and implementation.
-        </p>
-      </div>
+    <div className="w-full">
+      <div className="content-grid">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 neon-text">
+            AI Ethics Principles
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Understanding these core principles is essential for responsible AI
+            development and implementation.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {principles.map((principle, index) => (
-          <Card
-            key={index}
-            className="p-6 hover:scale-[1.02] transition-transform backdrop-blur-sm"
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-3 rounded-full bg-primary/10">
-                <principle.icon className="h-6 w-6" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {principles.map((principle, index) => (
+            <Card
+              key={index}
+              className="p-8 hover:scale-[1.02] transition-transform backdrop-blur-sm bg-gradient-to-br from-background/80 to-background/40 border-primary/10"
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-primary/10">
+                  <principle.icon className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-semibold neon-text">
+                  {principle.title}
+                </h3>
+                <p className="text-muted-foreground text-lg">
+                  {principle.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold neon-text">{principle.title}</h3>
-              <p className="text-muted-foreground">{principle.description}</p>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-4 neon-text">
+            Why These Principles Matter
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            These principles form the foundation of responsible AI development,
+            ensuring that artificial intelligence serves humanity while
+            respecting individual rights and promoting social good.
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
