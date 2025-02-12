@@ -1,7 +1,13 @@
 import NavigationBar from "@/components/NavigationBar";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { BookOpen, FileText, Tool, GraduationCap, ExternalLink } from "lucide-react";
+import { 
+  BookOpen, 
+  FileText, 
+  Wrench,
+  GraduationCap, 
+  ExternalLink 
+} from "lucide-react";
 
 const resourceCategories = [
   {
@@ -38,7 +44,7 @@ const resourceCategories = [
   },
   {
     title: "Detection Tools",
-    icon: Tool,
+    icon: Wrench,
     resources: [
       {
         title: "Deepfake Detector",
