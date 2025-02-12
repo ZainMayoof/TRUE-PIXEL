@@ -32,7 +32,7 @@ const NavigationBar = () => {
                 letterSpacing: "1px"
               }}
             >
-              Responsible AI
+              True Pixel
             </a>
           </div>
 
