@@ -7,32 +7,32 @@
     /* Light theme colors */
     --background: 0 0% 100%;
     --foreground: 260 50% 6%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 260 50% 6%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 260 50% 6%;
-    
+
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
-    
+
     --secondary: 220 14% 96%;
     --secondary-foreground: 260 50% 6%;
-    
+
     --muted: 220 14% 96%;
     --muted-foreground: 260 50% 45%;
-    
+
     --accent: 220 14% 96%;
     --accent-foreground: 260 50% 6%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 262 83% 58%;
-    
+
     --radius: 0.75rem;
   }
 
@@ -40,28 +40,28 @@
     /* Dark theme colors - keep your current dark theme values */
     --background: 260 50% 6%;
     --foreground: 210 40% 98%;
-    
+
     --card: 260 50% 6%;
     --card-foreground: 210 40% 98%;
-    
+
     --popover: 260 50% 6%;
     --popover-foreground: 210 40% 98%;
-    
+
     --primary: 262 83% 58%;
     --primary-foreground: 210 40% 98%;
-    
+
     --secondary: 260 50% 10%;
     --secondary-foreground: 210 40% 98%;
-    
+
     --muted: 260 50% 10%;
     --muted-foreground: 215 20% 65%;
-    
+
     --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
-    
+
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-    
+
     --border: 260 50% 10%;
     --input: 260 50% 10%;
     --ring: 262 83% 58%;
@@ -93,8 +93,7 @@
 .neon-text {
   @apply text-foreground;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
-               0 0 20px rgba(255, 255, 255, 0.5),
-               0 0 30px rgba(255, 255, 255, 0.3);
+    0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .gradient-hover {
@@ -104,13 +103,17 @@
 }
 
 .gradient-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease;
@@ -132,14 +135,30 @@
 }
 
 html {
-  background: radial-gradient(circle at center, hsl(262 83% 58% / 0.15), transparent 60%),
-              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%),
-              hsl(260 50% 6%);
+  background: radial-gradient(
+      circle at center,
+      hsl(262 83% 58% / 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at top right,
+      hsl(262 83% 58% / 0.1),
+      transparent 60%
+    ),
+    hsl(260 50% 6%);
   min-height: 100vh;
 }
 
 .dark html {
-  background: radial-gradient(circle at center, hsl(262 83% 58% / 0.15), transparent 60%),
-              radial-gradient(circle at top right, hsl(262 83% 58% / 0.1), transparent 60%),
-              hsl(260 50% 6%);
+  background: radial-gradient(
+      circle at center,
+      hsl(262 83% 58% / 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at top right,
+      hsl(262 83% 58% / 0.1),
+      transparent 60%
+    ),
+    hsl(260 50% 6%);
 }

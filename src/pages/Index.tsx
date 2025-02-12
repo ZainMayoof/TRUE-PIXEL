@@ -1,8 +1,8 @@
-
 import NavigationBar from "@/components/NavigationBar";
 import Hero from "@/components/Hero";
 import DeepfakeGame from "@/components/DeepfakeGame";
 import PrinciplesSection from "@/components/PrinciplesSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,6 +13,7 @@ const Index = () => {
         <Hero />
         <DeepfakeGame />
         <PrinciplesSection />
+        <CaseStudiesSection />
       </main>
       <Footer />
     </div>
