@@ -1,5 +1,5 @@
-
 import { Github, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,9 +27,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#resources" className="text-muted-foreground hover:text-foreground">
+                <Link to="/resources" className="text-muted-foreground hover:text-foreground">
                   Resources
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#about" className="text-muted-foreground hover:text-foreground">
@@ -43,19 +43,19 @@ const Footer = () => {
             <h4 className="font-medium mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                <Link to="/resources" className="text-muted-foreground hover:text-foreground">
                   Documentation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                <Link to="/resources" className="text-muted-foreground hover:text-foreground">
                   Guide
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground">
+                <Link to="/resources" className="text-muted-foreground hover:text-foreground">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

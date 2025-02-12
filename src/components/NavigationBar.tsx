@@ -24,9 +24,9 @@ const NavigationBar = () => {
             <a href="/#case-studies" className="hover:text-primary/80 transition-colors">
               Case Studies
             </a>
-            <a href="/#resources" className="hover:text-primary/80 transition-colors">
+            <Link to="/resources" className="hover:text-primary/80 transition-colors">
               Resources
-            </a>
+            </Link>
             <Link to="/about" className="hover:text-primary/80 transition-colors">
               About
             </Link>
@@ -60,12 +60,12 @@ const NavigationBar = () => {
               >
                 Case Studies
               </a>
-              <a
-                href="/#resources"
+              <Link
+                to="/resources"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
               >
                 Resources
-              </a>
+              </Link>
               <Link
                 to="/about"
                 className="block px-3 py-2 rounded-md hover:bg-primary/10 transition-colors"
