@@ -12,7 +12,7 @@ const FloatingRobot = () => {
 
       const sections = [
         { id: "hero", message: "Welcome to our AI journey!" },
-        { id: "deepfake-game", message: "Try our Deepfake detection game!" },
+        { id: "deepfake-game", message: "Try Deepfake Game!" },
         { id: "principles", message: "Learn about AI principles" },
         { id: "case-studies", message: "Explore real-world AI cases" },
       ];
@@ -57,20 +57,25 @@ const FloatingRobot = () => {
     const topMargin = 100;
     const bottomMargin = 100;
     const rightMargin = 32; // 2rem
-    const leftMargin = 32; // 2rem
 
-    // Start from top-right (high top, high right)
-    // Move to bottom-left (low top, low right)
     const verticalRange = window.innerHeight - topMargin - bottomMargin - 160; // 160px accounts for robot height
-    const horizontalRange = window.innerWidth - rightMargin - leftMargin - 128; // 128px is robot width
 
-    const top = topMargin + scrollProgress * verticalRange;
-    const right = rightMargin + scrollProgress * horizontalRange;
+    // Only vertical movement
+    const verticalProgress = easeInOutQuad(scrollProgress);
+    const top = topMargin + verticalProgress * verticalRange;
+
+    // Keep fixed horizontal position at right margin
+    const right = rightMargin;
 
     return {
       top: `${top}px`,
       right: `${right}px`,
     };
+  };
+
+  // Easing function for smoother movement
+  const easeInOutQuad = (t: number): number => {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   };
 
   const position = calculatePosition();
