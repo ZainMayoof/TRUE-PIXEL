@@ -17,10 +17,28 @@ const Hero = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-sm font-medium mb-4">
             Interactive AI Learning
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight neon-text">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight neon-text">
             Decoding AI in Media:
             <br />
-            Can You Spot the Truth?
+            Can You Spot the{" "}
+            <span
+              style={{
+                background: `linear-gradient(45deg, 
+                  #FFFFFF 0%,
+                  #6C7BFF 25%,
+                  #FF00D6 50%,
+                  #0500FF 75%,
+                  #6AB8FF 100%
+                )`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundSize: "200% auto",
+                animation: "gradient 3s linear infinite",
+                textShadow: "0 0 10px rgba(108, 123, 255, 0.3)"
+              }}
+            >
+              Truth
+            </span>?
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Explore AI-generated media, deepfake detection, and ethical AI principles
