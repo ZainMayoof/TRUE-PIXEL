@@ -60,7 +60,7 @@ const PrinciplesSection = () => {
                 </div>
               </Card>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80 backdrop-blur-xl bg-background/80">
+            <HoverCardContent className="w-80 backdrop-blur-xl bg-background/80 z-50">
               <div className="space-y-2">
                 <h4 className="text-sm font-semibold">{principle.title}</h4>
                 <p className="text-sm text-muted-foreground">
