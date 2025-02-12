@@ -6,7 +6,10 @@ import ThemeToggle from "./ThemeToggle";
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -20,9 +23,9 @@ const NavigationBar = () => {
       <div className="content-grid">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a 
-              href="/" 
-              onClick={(e) => handleNavClick(e, "hero")} 
+            <a
+              href="/"
+              onClick={(e) => handleNavClick(e, "hero")}
               className="text-xl font-semibold"
             >
               Responsible AI
