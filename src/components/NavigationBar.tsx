@@ -30,7 +30,7 @@ const NavigationBar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-semibold">
-              Responsible AI
+              True Pixel
             </Link>
           </div>
 

@@ -4,6 +4,7 @@ import DeepfakeGame from "@/components/DeepfakeGame";
 import PrinciplesSection from "@/components/PrinciplesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import Footer from "@/components/Footer";
+import FloatingRobot from '@/components/FloatingRobot';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <main>
         <Hero />
         <DeepfakeGame />
+        <FloatingRobot />
         <PrinciplesSection />
         <CaseStudiesSection />
       </main>

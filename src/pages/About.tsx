@@ -17,8 +17,9 @@ const About = () => {
               </h1>
               <div className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto space-y-6">
                 <p>
-                  We're dedicated to educating the next generation about AI ethics
-                  and responsible use of artificial intelligence technologies.
+                  We're dedicated to educating the next generation about AI
+                  ethics and responsible use of artificial intelligence
+                  technologies.
                 </p>
                 <p>
                   Through interactive experiences and comprehensive resources,
@@ -27,8 +28,8 @@ const About = () => {
                 </p>
                 <p>
                   Our platform combines cutting-edge technology with ethical
-                  principles to create engaging learning experiences that make
-                  a real difference in how people understand and interact with AI.
+                  principles to create engaging learning experiences that make a
+                  real difference in how people understand and interact with AI.
                 </p>
               </div>
             </div>
@@ -40,4 +41,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

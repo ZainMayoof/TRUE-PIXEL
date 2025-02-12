@@ -1,12 +1,12 @@
 import NavigationBar from "@/components/NavigationBar";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { 
-  BookOpen, 
-  FileText, 
+import {
+  BookOpen,
+  FileText,
   Wrench,
-  GraduationCap, 
-  ExternalLink 
+  GraduationCap,
+  ExternalLink,
 } from "lucide-react";
 
 const resourceCategories = [
@@ -16,12 +16,14 @@ const resourceCategories = [
     resources: [
       {
         title: "Understanding Deepfakes",
-        description: "A comprehensive guide to understanding and detecting AI-generated media.",
+        description:
+          "A comprehensive guide to understanding and detecting AI-generated media.",
         link: "https://example.com/deepfake-guide",
       },
       {
         title: "AI Ethics Course",
-        description: "Learn about the ethical implications of AI in modern media.",
+        description:
+          "Learn about the ethical implications of AI in modern media.",
         link: "https://example.com/ai-ethics",
       },
     ],
@@ -48,7 +50,8 @@ const resourceCategories = [
     resources: [
       {
         title: "Deepfake Detector",
-        description: "Open-source tool for analyzing potentially AI-generated media.",
+        description:
+          "Open-source tool for analyzing potentially AI-generated media.",
         link: "https://example.com/detector",
       },
       {
@@ -91,22 +94,30 @@ const Resources = () => {
                 AI Media Resources
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Explore our curated collection of resources to deepen your understanding
-                of AI in media and responsible technology use.
+                Explore our curated collection of resources to deepen your
+                understanding of AI in media and responsible technology use.
               </p>
             </div>
 
             <div className="grid gap-12">
               {resourceCategories.map((category, index) => (
-                <div key={index} className="animate-in" style={{ '--enter-delay': `${index * 100}ms` } as React.CSSProperties}>
+                <div
+                  key={index}
+                  className="animate-in"
+                  style={
+                    {
+                      "--enter-delay": `${index * 100}ms`,
+                    } as React.CSSProperties
+                  }
+                >
                   <div className="flex items-center gap-2 mb-6">
                     <category.icon className="h-6 w-6 text-primary" />
                     <h2 className="text-2xl font-semibold">{category.title}</h2>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     {category.resources.map((resource, resourceIndex) => (
-                      <Card 
-                        key={resourceIndex} 
+                      <Card
+                        key={resourceIndex}
                         className="p-6 hover:scale-[1.02] transition-transform backdrop-blur-sm"
                       >
                         <a
@@ -119,7 +130,9 @@ const Resources = () => {
                             {resource.title}
                             <ExternalLink className="h-4 w-4 text-muted-foreground" />
                           </h3>
-                          <p className="text-muted-foreground">{resource.description}</p>
+                          <p className="text-muted-foreground">
+                            {resource.description}
+                          </p>
                         </a>
                       </Card>
                     ))}
@@ -135,4 +148,4 @@ const Resources = () => {
   );
 };
 
-export default Resources; 
+export default Resources;
