@@ -11,10 +11,10 @@ const FloatingRobot = () => {
       setScrollY(window.scrollY);
 
       const sections = [
-        { id: "hero", message: "Welcome to our AI journey!" },
+        { id: "hero", message: "Welcome to AI journey!" },
         { id: "deepfake-game", message: "Try Deepfake Game!" },
         { id: "principles", message: "Learn about AI principles" },
-        { id: "case-studies", message: "Explore real-world AI cases" },
+        { id: "case-studies", message: "Explore AI cases" },
       ];
 
       // Find which section is currently in view
@@ -28,6 +28,10 @@ const FloatingRobot = () => {
             rect.bottom >= window.innerHeight / 2
           ) {
             setMessage(section.message);
+            // Trigger waving when showing welcome message
+            if (section.id === "hero") {
+              setTimeout(() => setIsWaving(true), 2000);
+            }
             break;
           }
         }
@@ -38,14 +42,21 @@ const FloatingRobot = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Initial wave when component mounts
   useEffect(() => {
-    const waveInterval = setInterval(() => {
-      setIsWaving(true);
-      setTimeout(() => setIsWaving(false), 2000);
-    }, 8000);
-
-    return () => clearInterval(waveInterval);
+    setTimeout(() => setIsWaving(true), 2000);
   }, []);
+
+  // Periodic waving only when in hero section
+  useEffect(() => {
+    if (message === "Welcome to AI journey!") {
+      const waveInterval = setInterval(() => {
+        setTimeout(() => setIsWaving(true), 2000);
+      }, 8000);
+
+      return () => clearInterval(waveInterval);
+    }
+  }, [message]);
 
   // Calculate position based on scroll
   const calculatePosition = () => {
@@ -101,19 +112,19 @@ const FloatingRobot = () => {
           exit={{ opacity: 0, y: 10 }}
         >
           {/* Modern Speech Bubble */}
-          <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20 max-w-[200px] mx-auto">
-            <div className="relative text-gray-800 font-medium text-sm break-words">
+          <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-md p-2 rounded-xl shadow-lg border border-white/20 max-w-[180px] mx-auto">
+            <div className="relative text-gray-800 font-medium text-xs break-words">
               {message}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-6 border-l-transparent border-t-6 border-white/90 border-r-6 border-r-transparent" />
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-l-transparent border-t-4 border-white/90 border-r-4 border-r-transparent" />
             </div>
           </div>
         </motion.div>
       </AnimatePresence>
 
       <motion.div
-        className="relative w-32 h-40"
+        className="relative w-24 h-32"
         animate={{
-          y: [0, -6, 0],
+          y: [0, -4, 0],
         }}
         transition={{
           duration: 3,
@@ -122,19 +133,19 @@ const FloatingRobot = () => {
         }}
       >
         {/* Head */}
-        <div className="absolute w-28 h-28 left-1/2 transform -translate-x-1/2">
+        <div className="absolute w-20 h-20 left-1/2 transform -translate-x-1/2">
           {/* Main Head Shape */}
           <div className="absolute w-full h-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-2xl shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl" />
 
             {/* Face Screen */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-14 bg-gray-900/90 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-700">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-10 bg-gray-900/90 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-700">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-cyan-500/10" />
 
               {/* Eyes */}
-              <div className="flex justify-center items-center h-full space-x-4">
+              <div className="flex justify-center items-center h-full space-x-3">
                 <motion.div
-                  className="relative w-4 h-4"
+                  className="relative w-3 h-3"
                   animate={{
                     scale: [1, 1.1, 1],
                   }}
@@ -149,7 +160,7 @@ const FloatingRobot = () => {
                 </motion.div>
 
                 <motion.div
-                  className="relative w-4 h-4"
+                  className="relative w-3 h-3"
                   animate={{
                     scale: [1, 1.1, 1],
                   }}
@@ -210,7 +221,7 @@ const FloatingRobot = () => {
         </div>
 
         {/* Body */}
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-16">
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-12">
           <div className="w-full h-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-xl shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl" />
 
@@ -254,40 +265,51 @@ const FloatingRobot = () => {
           </div>
         </div>
 
-        {/* Arms */}
+        {/* Left Arm (Conditional Waving) */}
         <motion.div
-          className="absolute left-3 top-24 w-3 h-12"
+          className="absolute left-2 top-20 w-2 h-10"
+          initial={{ rotate: 0 }}
           animate={{
-            rotate: isWaving ? [-45, 0] : 0,
+            rotate: message === "Welcome to AI journey!" 
+              ? [-120, -230, -120] // Enthusiastic upward wave for welcome
+              : 0,   // Changed from -45 to 0 for straight position
           }}
           transition={{
-            duration: 0.5,
+            duration: 1.2,
+            repeat: message === "Welcome to AI journey!" ? Infinity : 0,
             ease: "easeInOut",
+            repeatType: "reverse",
+          }}
+          style={{
+            transformOrigin: "top",
+            originX: 0.5,
+            originY: 0,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-full shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
           </div>
-          <div className="absolute -bottom-1.5 left-0 w-3 h-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg">
+          <div className="absolute -bottom-1.5 left-0 w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
           </div>
         </motion.div>
 
-        <div className="absolute right-3 top-24 w-3 h-12">
+        {/* Right Arm (Static) */}
+        <div className="absolute right-2 top-20 w-2 h-10">
           <div className="w-full h-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-full shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
           </div>
-          <div className="absolute -bottom-1.5 left-0 w-3 h-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg">
+          <div className="absolute -bottom-1.5 left-0 w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
           </div>
         </div>
 
         {/* Feet */}
-        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <div className="w-6 h-4 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-lg shadow-lg">
+        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-1">
+          <div className="w-4 h-3 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-lg shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-lg" />
           </div>
-          <div className="w-6 h-4 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-lg shadow-lg">
+          <div className="w-4 h-3 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-lg shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-lg" />
           </div>
         </div>
