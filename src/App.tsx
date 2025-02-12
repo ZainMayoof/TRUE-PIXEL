@@ -11,6 +11,7 @@ import AboutPage from "@/pages/about";
 import NotFound from "./pages/NotFound";
 import CaseStudiesPage from "@/pages/case-studies";
 import ToolsPage from "@/pages/tools";
+import CustomCursor from "@/components/CustomCursor";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <CustomCursor />
         <Router>
           <Routes>
             <Route path="/" element={<Index />} />
