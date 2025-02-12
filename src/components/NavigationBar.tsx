@@ -28,9 +28,14 @@ const NavigationBar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="content-grid">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="text-xl font-semibold">
-              True Pixel
+          <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
+              <img
+                src="/images/logo.png"
+                alt="True Pixel Logo"
+                className="h-14 w-auto"
+              />
+              <span className="text-xl font-semibold">True Pixel</span>
             </Link>
           </div>
 
