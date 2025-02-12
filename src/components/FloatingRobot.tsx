@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const FloatingRobot = () => {
   const [isWaving, setIsWaving] = useState(false);
   const [message, setMessage] = useState("Hi! I'm here to help you");
-  const [currentSection, setCurrentSection] = useState("hero");
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      setScrollY(window.scrollY);
+
       const sections = [
         { id: "hero", message: "Welcome to our AI journey!" },
         { id: "deepfake-game", message: "Try our Deepfake detection game!" },
@@ -25,7 +27,6 @@ const FloatingRobot = () => {
             rect.top <= window.innerHeight / 2 &&
             rect.bottom >= window.innerHeight / 2
           ) {
-            setCurrentSection(section.id);
             setMessage(section.message);
             break;
           }
@@ -46,29 +47,59 @@ const FloatingRobot = () => {
     return () => clearInterval(waveInterval);
   }, []);
 
+  // Calculate position based on scroll
+  const calculatePosition = () => {
+    const maxScroll =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = scrollY / maxScroll;
+
+    // Safe area margins (in pixels)
+    const topMargin = 100;
+    const bottomMargin = 100;
+    const rightMargin = 32; // 2rem
+    const leftMargin = 32; // 2rem
+
+    // Start from top-right (high top, high right)
+    // Move to bottom-left (low top, low right)
+    const verticalRange = window.innerHeight - topMargin - bottomMargin - 160; // 160px accounts for robot height
+    const horizontalRange = window.innerWidth - rightMargin - leftMargin - 128; // 128px is robot width
+
+    const top = topMargin + scrollProgress * verticalRange;
+    const right = rightMargin + scrollProgress * horizontalRange;
+
+    return {
+      top: `${top}px`,
+      right: `${right}px`,
+    };
+  };
+
+  const position = calculatePosition();
+
   return (
     <motion.div
-      className="fixed right-8 z-50"
-      animate={{
-        bottom: currentSection === "hero" ? "2rem" : "4rem",
+      className="fixed z-50"
+      style={{
+        top: position.top,
+        right: position.right,
       }}
       transition={{
-        duration: 0.3,
-        ease: "easeInOut",
+        type: "spring",
+        stiffness: 70,
+        damping: 15,
       }}
     >
       <AnimatePresence>
         <motion.div
-          className="absolute -top-24 right-0"
+          className="absolute -top-16 left-0 right-0 -translate-x-1/2"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
         >
           {/* Modern Speech Bubble */}
           <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20">
-            <div className="relative text-gray-800 font-medium text-sm">
+            <div className="relative text-gray-800 font-medium text-m whitespace-nowrap">
               {message}
-              <div className="absolute -bottom-6 right-6 w-0 h-0 border-l-6 border-l-transparent border-t-6 border-white/90 border-r-6 border-r-transparent" />
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-6 border-l-transparent border-t-6 border-white/90 border-r-6 border-r-transparent" />
             </div>
           </div>
         </motion.div>

@@ -1,3 +1,4 @@
+import React from "react";
 import NavigationBar from "@/components/NavigationBar";
 import Hero from "@/components/Hero";
 import DeepfakeGame from "@/components/DeepfakeGame";
@@ -8,22 +9,22 @@ import FloatingRobot from "@/components/FloatingRobot";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden">
       <NavigationBar />
-      <main>
-        <div id="hero">
+      <main className="relative">
+        <section id="hero" className="min-h-[100vh]">
           <Hero />
-        </div>
-        <div id="deepfake-game">
+        </section>
+        <section id="deepfake-game" className="min-h-[100vh]">
           <DeepfakeGame />
-        </div>
-        <FloatingRobot />
-        <div id="principles">
+        </section>
+        <section id="principles" className="min-h-[100vh]">
           <PrinciplesSection />
-        </div>
-        <div id="case-studies">
+        </section>
+        <section id="case-studies" className="min-h-[100vh]">
           <CaseStudiesSection />
-        </div>
+        </section>
+        <FloatingRobot />
       </main>
       <Footer />
     </div>
