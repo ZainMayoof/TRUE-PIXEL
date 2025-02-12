@@ -1,6 +1,47 @@
 import { Card } from "@/components/ui/card";
-import { ExternalLink, AlertTriangle, Shield, Lightbulb } from "lucide-react";
+import {
+  ExternalLink,
+  AlertTriangle,
+  Shield,
+  Lightbulb,
+  Palette,
+  Pencil,
+  Video,
+  Layout,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const topics = [
+  {
+    icon: Palette,
+    title: "AI-Generated Art",
+    description:
+      "AI is changing the landscape of art, allowing creators to explore new techniques and styles that were once impossible. From abstract pieces to hyper-realistic renderings, AI-generated art opens up endless possibilities for artistic expression.",
+    effect: "fade-in",
+  },
+  {
+    icon: Pencil,
+    title: "AI in Graphic Design",
+    description:
+      "Graphic designers now have powerful AI tools that assist in everything from color selection to layout design. AI can help automate repetitive tasks, allowing designers to focus on creativity and concept development.",
+    effect: "scale-up",
+  },
+  {
+    icon: Video,
+    title: "AI in Video & Animation",
+    description:
+      "AI is revolutionizing video production and animation. Whether it's AI-powered editing tools, automatic scene generation, or the creation of animated characters, AI enhances efficiency and creativity in the production process.",
+    effect: "glow",
+  },
+  {
+    icon: Layout,
+    title: "AI in UX/UI Design",
+    description:
+      "In UX/UI design, AI helps to predict user behavior, optimize user interfaces, and create personalized experiences. From smart layouts to adaptive designs, AI empowers designers to create more intuitive and effective digital products.",
+    effect: "neon-outline",
+  },
+];
 
 const caseStudies = [
   {
@@ -62,6 +103,42 @@ const caseStudies = [
 const CaseStudiesSection = () => {
   return (
     <section id="case-studies" className="py-24 content-grid">
+      <div className="mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4 neon-text">
+            AI in Creative Fields
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Discover how AI is transforming different areas of creative work
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {topics.map((topic, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <Card className="p-8 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm bg-gradient-to-br from-background/80 to-background/40 border-primary/10 hover:border-primary/30">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="p-4 rounded-full bg-primary/10">
+                    <topic.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-semibold gradient-text">
+                    {topic.title}
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    {topic.description}
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       <div className="text-center mb-16">
         <h2 className="text-3xl font-bold mb-4 neon-text">
           Real-World AI Ethics Cases
