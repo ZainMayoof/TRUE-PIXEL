@@ -96,8 +96,8 @@ const FloatingRobot = () => {
           exit={{ opacity: 0, y: 10 }}
         >
           {/* Modern Speech Bubble */}
-          <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20">
-            <div className="relative text-gray-800 font-medium text-m whitespace-nowrap">
+          <div className="relative bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-md p-3 rounded-xl shadow-lg border border-white/20 max-w-[200px] mx-auto">
+            <div className="relative text-gray-800 font-medium text-sm break-words">
               {message}
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-0 h-0 border-l-6 border-l-transparent border-t-6 border-white/90 border-r-6 border-r-transparent" />
             </div>
