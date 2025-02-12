@@ -270,9 +270,10 @@ const FloatingRobot = () => {
           className="absolute left-2 top-20 w-2 h-10"
           initial={{ rotate: 0 }}
           animate={{
-            rotate: message === "Welcome to AI journey!" 
-              ? [-120, -230, -120] // Enthusiastic upward wave for welcome
-              : 0,   // Changed from -45 to 0 for straight position
+            rotate:
+              message === "Welcome to AI journey!"
+                ? [-120, -230, -120] // Enthusiastic upward wave for welcome
+                : 0, // Changed from -45 to 0 for straight position
           }}
           transition={{
             duration: 1.2,
