@@ -1,4 +1,28 @@
 # Welcome to your Lovable project
+# 🎨 True Pixel – Where Art Meets Responsible AI 🤖  
+
+## **About True Pixel**  
+True Pixel is an interactive web experience designed to educate **artists, designers, and multimedia students** about **Responsible AI** in creativity. The project was built for a **hackathon**, demonstrating AI’s role in digital art while emphasizing **transparency, ethics, and human-AI collaboration**.  
+
+## **Features**  
+✅ **Is It Human or AI?** – A fun guessing game where users compare two images and identify which is AI-generated.  
+✅ **Transparency Checker** – A tool that allows users to upload an image to detect if it was AI-generated, promoting AI transparency.  
+✅ **10x10 Pixel Art Maker** – Users can create pixel art, then enhance it with AI to explore AI-assisted creativity.  
+
+## **Why Responsible AI?**  
+- AI-generated content should be clearly labeled to prevent misinformation.  
+- AI should **assist, not replace** human creativity.  
+- Educating future designers ensures ethical AI use in the creative industry.  
+
+## **Tools & Technologies Used**  
+### **Development**  
+💻 **VS Code** – Coding and debugging.  
+🤖 **GitHub Copilot** – AI-assisted code completion.  
+🎭 **Lovablle** – UI/UX design elements.  
+
+### **Media Generation**  
+🖌️ **Canva Magic AI & Adobe Firefly** – AI-generated images and design assets.  
+✍️ **Claude AI** – Assisted with content writing and structuring.  
 
 ## Project info
 
