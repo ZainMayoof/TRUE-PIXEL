@@ -109,7 +109,7 @@ const CaseStudiesSection = () => {
             Case Studies
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="neon-text">Real-World AI Cases</span>
+            <span className="neon-text">Real-World AI Cases in Media</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Examining actual cases where AI implementation raised ethical
@@ -164,73 +164,99 @@ const CaseStudiesSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8">
+      {/* Infographic Style Layout */}
+      <div className="relative max-w-5xl mx-auto">
+        {/* Center Line */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20" />
+
+        {/* Cases */}
         {caseStudies.map((study, index) => (
-          <Card
+          <div
             key={index}
-            className="p-8 hover:scale-[1.01] transition-all duration-300 backdrop-blur-sm border-primary/20"
+            className={`relative flex items-center gap-8 mb-16 ${
+              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+            }`}
           >
-            <div className="grid md:grid-cols-[1fr,2fr,2fr] gap-8">
-              {/* Left Column - Icon and Title */}
-              <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-                <div className="p-4 rounded-full bg-primary/10 ring-1 ring-primary/20">
-                  <study.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold neon-text">
-                  {study.title}
-                </h3>
-                <p className="text-sm text-primary/80">{study.subtitle}</p>
-                <a
-                  href={study.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-sm text-primary hover:text-primary/80 transition-colors"
-                >
-                  <span>Learn More</span>
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-
-              {/* Middle Column - Description and Harms */}
-              <div className="space-y-4">
-                <p className="text-muted-foreground">{study.description}</p>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-foreground">
-                    Potential Harms:
-                  </h4>
-                  <ul className="space-y-2">
-                    {study.harms.map((harm, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start text-sm text-muted-foreground"
-                      >
-                        <span className="mr-2 text-primary">•</span>
-                        {harm}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Right Column - Solutions */}
-              <div className="space-y-4">
-                <h4 className="font-semibold text-foreground">
-                  How to Reduce These Harms:
-                </h4>
-                <ul className="space-y-2">
-                  {study.solutions.map((solution, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start text-sm text-muted-foreground"
-                    >
-                      <span className="mr-2 text-primary">✓</span>
-                      {solution}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Step Number Circle */}
+            <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
+              <span className="text-white font-bold">0{index + 1}</span>
             </div>
-          </Card>
+
+            {/* Content Card */}
+            <div
+              className={`w-1/2 ${
+                index % 2 === 0 ? "text-right" : "text-left"
+              }`}
+            >
+              <Card className="p-6 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm bg-gradient-to-br from-background/80 to-background/40 border-primary/10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className={`p-3 rounded-full bg-primary/10 ${
+                      index % 2 === 0 ? "order-last ml-auto" : ""
+                    }`}
+                  >
+                    <study.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className={index % 2 === 0 ? "ml-auto" : ""}>
+                    <h3 className="text-xl font-semibold">{study.title}</h3>
+                    <p className="text-sm text-primary/80">{study.subtitle}</p>
+                  </div>
+                </div>
+
+                <p className="text-muted-foreground mb-4">
+                  {study.description}
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      Key Issues:
+                    </h4>
+                    <ul className="space-y-1">
+                      {study.harms.map((harm, idx) => (
+                        <li
+                          key={idx}
+                          className="text-sm text-muted-foreground flex items-start gap-2"
+                        >
+                          <span className="text-primary">•</span>
+                          <span>{harm}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      Solutions:
+                    </h4>
+                    <ul className="space-y-1">
+                      {study.solutions.map((solution, idx) => (
+                        <li
+                          key={idx}
+                          className="text-sm text-muted-foreground flex items-start gap-2"
+                        >
+                          <span className="text-primary">•</span>
+                          <span>{solution}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <a
+                    href={study.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <span>Learn More</span>
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </div>
         ))}
       </div>
     </section>
