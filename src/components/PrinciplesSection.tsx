@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "@/components/ui/card";
 import {
   Palette,
@@ -88,6 +89,15 @@ const flipCards = [
 ];
 
 const PrinciplesSection = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    // Set playback speed when video loads
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.3;
+    }
+  }, []);
+
   return (
     <div className="w-full bg-gradient-to-b from-background to-background/80">
       <div className="content-grid">
@@ -191,6 +201,29 @@ const PrinciplesSection = () => {
             misinformation, you can harness the power of AI to create impactful,
             meaningful work that benefits everyone.
           </p>
+        </div>
+
+        {/* Video Section */}
+        <div className="my-24 max-w-4xl mx-auto">
+          <div className="relative aspect-video rounded-xl overflow-hidden">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              controls
+              poster="/images/video-thumbnail.jpg"
+            >
+              <source src="/images/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="text-center mt-6">
+            <h3 className="text-xl font-semibold mb-2">
+              Understanding AI Principles
+            </h3>
+            <p className="text-muted-foreground">
+              A comprehensive guide to responsible AI usage in creative fields
+            </p>
+          </div>
         </div>
       </div>
     </div>
