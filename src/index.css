@@ -267,43 +267,43 @@ html {
 }
 
 /* Enhanced drip colors with glow effect */
-.drip-primary { 
+.drip-primary {
   background: hsl(var(--primary));
   box-shadow: 0 0 10px hsl(var(--primary));
 }
-.drip-violet { 
+.drip-violet {
   background: hsl(270, 80%, 60%);
   box-shadow: 0 0 10px hsl(270, 80%, 60%);
 }
-.drip-blue { 
+.drip-blue {
   background: hsl(210, 80%, 60%);
   box-shadow: 0 0 10px hsl(210, 80%, 60%);
 }
-.drip-green { 
+.drip-green {
   background: hsl(150, 80%, 60%);
   box-shadow: 0 0 10px hsl(150, 80%, 60%);
 }
-.drip-orange { 
+.drip-orange {
   background: hsl(30, 80%, 60%);
   box-shadow: 0 0 10px hsl(30, 80%, 60%);
 }
-.drip-red { 
+.drip-red {
   background: hsl(0, 80%, 60%);
   box-shadow: 0 0 10px hsl(0, 80%, 60%);
 }
-.drip-cyan { 
+.drip-cyan {
   background: hsl(180, 80%, 60%);
   box-shadow: 0 0 10px hsl(180, 80%, 60%);
 }
-.drip-pink { 
+.drip-pink {
   background: hsl(330, 80%, 60%);
   box-shadow: 0 0 10px hsl(330, 80%, 60%);
 }
-.drip-yellow { 
+.drip-yellow {
   background: hsl(60, 80%, 60%);
   box-shadow: 0 0 10px hsl(60, 80%, 60%);
 }
-.drip-purple { 
+.drip-purple {
   background: hsl(290, 80%, 60%);
   box-shadow: 0 0 10px hsl(290, 80%, 60%);
 }
@@ -333,7 +333,7 @@ html {
 }
 
 /* Make sure all clickable elements don't show the default cursor */
-a, 
+a,
 button,
 [role="button"],
 [class*="btn"],

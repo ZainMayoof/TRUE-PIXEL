@@ -28,7 +28,7 @@ const RainbowDrips = () => {
     const createDrip = () => {
       // Create multiple drips at once
       const numDrips = Math.floor(Math.random() * 2) + 1; // 1-2 drips at a time
-      
+
       for (let i = 0; i < numDrips; i++) {
         const newDrip = {
           id: Date.now() + i,
@@ -53,7 +53,8 @@ const RainbowDrips = () => {
 
     // Continue creating drips more frequently
     const interval = setInterval(() => {
-      if (Math.random() < 0.4) { // 40% chance to create drips
+      if (Math.random() < 0.4) {
+        // 40% chance to create drips
         createDrip();
       }
     }, 50);
