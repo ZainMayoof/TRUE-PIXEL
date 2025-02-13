@@ -24,10 +24,8 @@ True Pixel is an interactive web experience designed to educate **artists, desig
 🖌️ **Canva Magic AI & Adobe Firefly** – AI-generated images and design assets.  
 ✍️ **Claude AI** – Assisted with content writing and structuring.  
 
-# Documentation
-# [🎨 True Pixel – Where Art Meets Responsible AI 🤖  ](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)
-
-# Documentation
+# Documentation and Slides
+# [[🎨 True Pixel – Where Art Meets Responsible AI 🤖  ](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)
 # [https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)
 
 
