@@ -25,10 +25,10 @@ True Pixel is an interactive web experience designed to educate **artists, desig
 ✍️ **Claude AI** – Assisted with content writing and structuring.  
 
 # Documentation and Slides
-# [[🎨 True Pixel – Where Art Meets Responsible AI 🤖  ](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)
-# [https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing](https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing)
+https://docs.google.com/document/d/1dDHz6t03ZjQeg6RVSd5zGGlvE1LO8G12eZsTyy92xbA/edit?usp=sharing
 
-
+# Slides
+https://www.canva.com/design/DAGe7LMZbmI/yY4HpIdK2SeJkvA7vEmJFA/edit?utm_content=DAGe7LMZbmI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
 
